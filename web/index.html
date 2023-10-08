@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript" src="script.js" defer></script>
+
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Content Labeller</h1>
+        </div>
+        
+        <div class="flexcol">
+            <select onchange="js_setFocus(this.value)" name="platforms" id="platforms" >
+                <option value="Facebook">Facebook</option>
+                <option value="Instagram">Instagram</option>
+                <option value="X">X ENTS</option>
+                <option value="X Sport">X Sport</option>
+            </select>
+            
+            <div class="flexcenter">
+                <button type="button" onclick="loadPrevPost()">Prev post</button>
+                <button type="button" onclick="loadNextPost()">Next post</button>
+            </div>
+        </div>
+
+        <div class="visualiser">
+            <iframe id="contentVisualiser" width="500" height="500" src=""></iframe>
+            <h4 id="currentLabel"></h4>
+            <p id="caption"></p>
+        </div>
+
+        <div>
+            <select name="label" id="label">
+                <option value="Promo cut">Promo cut</option>
+                <option value="Lifts">Lifts</option>
+                <option value="Compilation">Compilation</option>
+                <option value="BTS/Cast content">BTS/Cast content</option>
+                <option value="Gamified">Gamified</option>
+                <option value="Trending">Trending</option>
+                <option value="Static">Static</option>
+            </select>
+
+            <button type="button" onclick="js_labelPost()">Label</button>
+        </div>
+
+        <div>
+            <button type="button" onclick="exportLabels()">Export</button>
+        </div>
+
+        <div id="logWindow">
+    </body>
+</html>
